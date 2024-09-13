@@ -109,10 +109,10 @@
           "icon": "line",
           "items": [
             {
-              "name": "聚类",
-              "id": "Cluster",
-              "icon": "",
-              "path": "/example/entity/text"
+              "name": "上升线",
+              "id": "risingline",
+              "icon": "risingline",
+              "path": "/example/entity/risingline"
             }
           ]
         },

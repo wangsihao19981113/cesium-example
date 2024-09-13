@@ -2,6 +2,7 @@ import { RouteRecordRaw } from 'vue-router'
 
 
 const entityRoutes: RouteRecordRaw[] = [
+    //点
     {
         path: "/example/entity/basepoint",
         name: "基础点",
@@ -48,6 +49,15 @@ const entityRoutes: RouteRecordRaw[] = [
         component: () => import('@/views/entity/point/html/index.vue'),
         meta: {
             title: 'Html',
+        }
+    },
+    //线
+    {
+        path: "/example/entity/risingline",
+        name: "上升线",
+        component: () => import('@/views/entity/line/risingLine/index.vue'),
+        meta: {
+            title: '上升线',
         }
     }
 ]
