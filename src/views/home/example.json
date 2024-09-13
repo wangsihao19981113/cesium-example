@@ -1,0 +1,205 @@
+{
+  "examples": [
+    {
+      "name": "服务",
+      "id" :"Service",
+      "icon":"service",
+      "categories":[
+        {
+          "name": "地图服务",
+          "id":"MapService",
+          "icon": "map-service",
+          "items": [
+            {
+              "name": "基础地图",
+              "id": "BaseMap",
+              "icon": "basemap",
+              "path": "/example/service/basemap"
+            },
+            {
+              "name": "arcgis地图",
+              "id": "ArcgisMap",
+              "icon": "arcgismap",
+              "path": "/example/service/arcgismap"
+            },
+            {
+              "name": "天地图地图",
+              "id": "TdtMap",
+              "icon": "tdtmap",
+              "path": "/example/service/tdtmap"
+            },
+            {
+              "name": "百度地图(无偏移)",
+              "id": "BaiduMap",
+              "icon": "baidumap",
+              "path": "/example/service/baidumap"
+            }
+          ]
+        },
+        {
+          "name": "地形服务",
+          "id":"TerrainService",
+          "icon": "terrain-service",
+          "items": [
+            {
+              "name": "Cesium地形",
+              "id": "CesiumTerrain",
+              "icon": "cesiumterrain",
+              "path": "/example/service/cesium-terrain-map"
+            },
+            {
+              "name": "arcgis地形",
+              "id": "ArcgisTerrain",
+              "icon": "arcgisterrain",
+              "path": "/example/service/arcgis-terrain-map"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "实体",
+      "id": "Entity",
+      "icon": "entity",
+      "categories":[
+        {
+          "name": "点",
+          "id": "Point",
+          "icon": "point",
+          "items": [
+            {
+              "name": "基础点",
+              "id": "BasePoint",
+              "icon": "basepoint",
+              "path": "/example/entity/basepoint"
+            },
+            {
+              "name": "文字",
+              "id": "Text",
+              "icon": "text",
+              "path": "/example/entity/text"
+            },
+            {
+              "name": "标签",
+              "id": "label",
+              "icon": "label",
+              "path": "/example/entity/label"
+            },
+            {
+              "name": "图片",
+              "id": "Image",
+              "icon": "image",
+              "path": "/example/entity/image"
+            },{
+              "name": "广告牌",
+              "id": "Billboard",
+              "icon": "billboard",
+              "path": "/example/entity/billboard"
+            },{
+              "name": "Html",
+              "id": "html",
+              "icon": "html",
+              "path": "/example/entity/html"
+            }
+          ]
+        },
+        {
+          "name": "线",
+          "id": "Line",
+          "icon": "line",
+          "items": [
+            {
+              "name": "聚类",
+              "id": "Cluster",
+              "icon": "",
+              "path": "/example/entity/text"
+            }
+          ]
+        },
+        {
+          "name": "面",
+          "id": "Polygon",
+          "icon": "polygon",
+          "items": [
+            {
+              "name": "聚类",
+              "id": "Cluster",
+              "icon": "",
+              "path": "/example/entity/text"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "模型",
+      "id": "model",
+      "icon": "model",
+      "categories":[
+        {
+          "name": "模型种类",
+          "id": "modeltype",
+          "icon": "modeltype",
+          "items": [
+            {
+              "name": "倾斜摄影",
+              "id": "basemodel",
+              "icon": "basemodel",
+              "path": "/example/model/basemodel"
+            },
+            {
+              "name": "GLB",
+              "id": "glb",
+              "icon": "glb",
+              "path": "/example/model/glb"
+            },
+            {
+              "name": "BIM",
+              "id": "bim",
+              "icon": "bim",
+              "path": "/example/model/bim"
+            },
+            {
+              "name": "点云LAS",
+              "id": "points",
+              "icon": "points",
+              "path": "/example/model/points"
+            },
+            {
+              "name": "自然幢",
+              "id": "building",
+              "icon": "building",
+              "path": "/example/model/building"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "分析",
+      "id": "Analysis",
+      "icon": "analysis",
+      "categories":[
+        {
+          "name": "场景分析",
+          "id": "sceneanalysis",
+          "icon": "sceneanalysis",
+          "items": [
+            {
+              "name": "水淹分析",
+              "id": "flooding",
+              "icon": "flooding",
+              "path": "/example/analysis/flooding"
+            },
+            {
+              "name": "可视域分析",
+              "id": "viewshed",
+              "icon": "viewshed",
+              "path": "/example/analysis/viewshed"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
