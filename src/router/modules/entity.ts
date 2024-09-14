@@ -59,6 +59,23 @@ const entityRoutes: RouteRecordRaw[] = [
         meta: {
             title: '上升线',
         }
+    },
+    {
+        path: "/example/entity/shineline",
+        name: "闪烁线",
+        component: () => import('@/views/entity/line/shineLine/index.vue'),
+        meta: {
+            title: '闪烁线',
+        }
+    },
+    //面
+    {
+        path: "/example/entity/water",
+        name: "水面",
+        component: () => import('@/views/entity/polygon/water/index.vue'),
+        meta: {
+            title: '水面',
+        }
     }
 ]
 

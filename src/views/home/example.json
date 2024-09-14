@@ -113,6 +113,12 @@
               "id": "risingline",
               "icon": "risingline",
               "path": "/example/entity/risingline"
+            },
+            {
+              "name": "闪烁线",
+              "id": "shineline",
+              "icon": "shineline",
+              "path": "/example/entity/shineline"
             }
           ]
         },
@@ -122,10 +128,10 @@
           "icon": "polygon",
           "items": [
             {
-              "name": "聚类",
-              "id": "Cluster",
-              "icon": "",
-              "path": "/example/entity/text"
+              "name": "反射水面",
+              "id": "water",
+              "icon": "water",
+              "path": "/example/entity/water"
             }
           ]
         }

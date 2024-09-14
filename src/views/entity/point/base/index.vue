@@ -2,7 +2,6 @@
 import {onMounted} from "vue";
 import SceneMap from "@/components/map/SceneMap.vue";
 import * as Cesium from "cesium"
-import {TextThreeD} from "@/lib/index"
 import {useMapStore} from "@/store/modules/mapStore/mapStore.ts";
 onMounted(async () => {
   let viewer = useMapStore().getCesiumViewer

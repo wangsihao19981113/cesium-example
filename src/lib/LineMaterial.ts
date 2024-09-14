@@ -90,81 +90,76 @@ Cesium.Material._materialCache.addMaterial('LineFlowMaterialType', {
     }
 })
 
-function addLineShineMaterialType(){
-    function LineShineMaterialProperty(duration, image) {
-        this._definitionChanged = new Cesium.Event()
-        this.duration = duration
-        this.image = image
+export class LineShineMaterialProperty{
+    _definitionChanged: Cesium.Event;
+    _time: DOMHighResTimeStamp
+    image:string
+    duration:string
+    constructor(options) {
+        debugger
+        Object.defineProperties(this, {
+            isConstant: {
+                get: function () {
+                    return false;
+                },
+            },
+            definitionChanged: {
+                get: function () {
+                    return this._definitionChanged;
+                },
+            },
+        });
+        this._definitionChanged = new Cesium.Event();
         this._time = performance.now()
+        this.image = options.image;
+        this.duration = options.duration;
+    };
+
+    getType(time) {
+        return 'LineShineMaterialType';
     }
-    Object.defineProperties(LineShineMaterialProperty.prototype, {
-        isConstant: {
-            get: function() {
-                return false
-            },
-        },
-        definitionChanged: {
-            get: function() {
-                return this._definitionChanged
-            },
-        },
-        color: Cesium.createPropertyDescriptor('color'),
-        duration: Cesium.createPropertyDescriptor('duration')
-    })
-    LineShineMaterialProperty.prototype.getType = function(time) {
-        return 'LineShine'
-    }
-    LineShineMaterialProperty.prototype.getValue = function(
-        time,
-        result
-    ) {
+
+    getValue(time, result) {
         if (!Cesium.defined(result)) {
             result = {}
         }
         result.image = this.image
-        result.time =
-            ((performance.now() - this._time) % this.duration) / this.duration
+        result.time = ((performance.now() - this._time) % this.duration) / this.duration
         return result
     }
-    LineShineMaterialProperty.prototype.equals = function(e) {
+
+    equals(other) {
         return (
-            this === e ||
-            (e instanceof LineShineMaterialProperty && this.duration === e.duration)
+            this === other ||
+            (other instanceof LineShineMaterialProperty && this.duration == other.duration && this.image == other.image)
         )
     }
-    Cesium.LineShineMaterialProperty = LineShineMaterialProperty
-    Cesium.Material.LineShineType = 'LineShine'
-    Cesium.Material.LineShineSource = `
-        czm_material czm_getMaterial(czm_materialInput materialInput)
-        {
-        czm_material material = czm_getDefaultMaterial(materialInput);
-        vec2 st = materialInput.st;
-        vec4 colorImage = texture2D(image, vec2(fract(st.s - time), st.t));
-        material.alpha = colorImage.a;
-        material.diffuse = colorImage.rgb * 1.5 ;
-        return material;
-        }
-    `
-    // st :二维纹理坐标
-    // czm_material：保存可用于照明的材质信息
-    Cesium.Material._materialCache.addMaterial(Cesium.Material.LineShineType, {
-        fabric: {
-            type: Cesium.Material.LineShineType,
-            uniforms: {
-                color: new Cesium.Color(1, 0, 0, 0.5),
-                image: '',
-                transparent: true,
-                time: 20,
-            },
-            source: Cesium.Material.LineShineSource,
-        },
-        translucent: function(material) {
-            return true
-        },
-    })
 }
 
-export{
-    addLineFlowMaterialType,
-    addLineShineMaterialType
-}
+let LineShineSource = `
+    czm_material czm_getMaterial(czm_materialInput materialInput)
+    {
+    czm_material material = czm_getDefaultMaterial(materialInput);
+    vec2 st = materialInput.st;
+    vec4 colorImage = texture2D(image, vec2(fract(st.s - time), st.t));
+    material.alpha = colorImage.a;
+    material.diffuse = colorImage.rgb * 1.5 ;
+    return material;
+    }
+`
+Cesium.Material._materialCache.addMaterial("LineShineMaterialType", {
+    fabric: {
+        type: "LineShineMaterialType",
+        uniforms: {
+            color: new Cesium.Color(1, 0, 0, 0.5),
+            image: '',
+            transparent: true,
+            time: 20,
+        },
+        source: LineShineSource,
+    },
+    translucent: function(material) {
+        return true
+    },
+})
+
