@@ -33,6 +33,7 @@ onMounted(async () => {
       update3dtilesMaxtrix(model)
     })
 
+
     useMapStore().setCameraView({
       "lng": 12.586823879441273,
       "lat": 41.882263837114515,

@@ -223,7 +223,6 @@ export class ViewShedStage {
         }
         this.lightCamera.frustum.near = this.viewDistance * 0.00001
         this.lightCamera.frustum.far = this.viewDistance
-        debugger
         const hr = Cesium.Math.toRadians(this.horizontalViewAngle)
         const vr = Cesium.Math.toRadians(this.verticalViewAngle)
         const aspectRatio =

@@ -14,7 +14,6 @@ export class HtmlPoint{
     private position
     private horizontalOrigin
     private verticalOrigin
-    private isRemove = false
     constructor(viewer:Cesium.Viewer,options:HtmlOption) {
         this.viewer = viewer
         this.html = options.html

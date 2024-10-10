@@ -20,7 +20,7 @@ onMounted(() => {
     geocoder: false, //是否显示地理编码器小部件，用于搜索位置
     homeButton: false, //是否显示回到主页按钮
     infoBox: false,
-    sceneModePicker: true, //是否显示场景模式选择器，允许用户在3D，2D，和Columbus View模式
+    sceneModePicker: false, //是否显示场景模式选择器，允许用户在3D，2D，和Columbus View模式
     selectionIndicator: false,
     navigationHelpButton: false, //是否显示导航帮助按钮
     navigationInstructionsInitiallyVisible: true,

@@ -53,11 +53,35 @@ const entityRoutes: RouteRecordRaw[] = [
     },
     //线
     {
+        path: "/example/entity/baseline",
+        name: "基础线",
+        component: () => import('@/views/entity/line/baseLine/index.vue'),
+        meta: {
+            title: '基础线',
+        }
+    },
+    {
+        path: "/example/entity/dashedline",
+        name: "虚线",
+        component: () => import('@/views/entity/line/dashedLine/index.vue'),
+        meta: {
+            title: '虚线',
+        }
+    },
+    {
         path: "/example/entity/risingline",
         name: "上升线",
         component: () => import('@/views/entity/line/risingLine/index.vue'),
         meta: {
             title: '上升线',
+        }
+    },
+    {
+        path: "/example/entity/parabolaline",
+        name: "抛物线",
+        component: () => import('@/views/entity/line/parabolaLine/index.vue'),
+        meta: {
+            title: '抛物线',
         }
     },
     {
@@ -75,6 +99,15 @@ const entityRoutes: RouteRecordRaw[] = [
         component: () => import('@/views/entity/polygon/water/index.vue'),
         meta: {
             title: '水面',
+        }
+    },
+    //粒子系统
+    {
+        path: "/example/entity/flow",
+        name: "流",
+        component: () => import('@/views/entity/particle/flow/index.vue'),
+        meta: {
+            title: '流',
         }
     }
 ]

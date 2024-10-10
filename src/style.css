@@ -19,3 +19,13 @@ html,body {
 .cesium-widget-credits{
   display:none !important;
 }
+
+.measure-tooltip{
+  position:absolute;
+  color: white;
+  pointer-events: none;
+  background: rgba(12,12,235,0.2);
+  padding: 5px;
+  font-size: 12px;
+  border-radius: 3px;
+}

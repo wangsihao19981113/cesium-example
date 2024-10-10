@@ -35,7 +35,6 @@ export class LineFlowMaterialProperty {
         if (!Cesium.defined(result)) {
             result = {};
         }
-        debugger
         result.color = this.color || Cesium.Color.RED;
         result.speed = this.speed || 5.0
         result.percent = this.percent || 0.1
@@ -96,7 +95,6 @@ export class LineShineMaterialProperty{
     image:string
     duration:string
     constructor(options) {
-        debugger
         Object.defineProperties(this, {
             isConstant: {
                 get: function () {

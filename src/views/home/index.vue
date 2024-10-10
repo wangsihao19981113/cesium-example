@@ -1,16 +1,23 @@
 <script setup lang="ts">
 import {ref} from 'vue'
-import {
-  Document,
-  Menu as IconMenu,
-  Location,
-  Setting,
-} from '@element-plus/icons-vue'
 
 import data from './example.json'
 
-const screenHeight = ref(document.documentElement.clientHeight)
 const examples = ref(data.examples)
+
+const getExampleNumber = () => {
+  let number = 0
+  for(let i = 0 ; i < examples.value.length ; i++){
+    let _package = examples.value[i]
+    for(let j = 0 ; j < _package.categories.length ; j++){
+      let category = _package.categories[j]
+      for(let x = 0 ; x < category.items.length ; x++){
+        number++
+      }
+    }
+  }
+  return number
+}
 
 const OpenExample = (url:string) => {
   if(url){
@@ -66,14 +73,15 @@ const getSketch = (img:string) => {
     </div>
   </el-menu>
   <div style="width: 100%;display: flex;height: calc(100% - 60px)">
-    <div style="width: 12%;display: flex;height: 100%">
+    <div style="width: 12%;display: flex;height: 100%;">
       <el-menu
-          style="width: 100%"
+          style="width: 100%;overflow-y: auto;height: 100%;"
           default-active="2"
           class="el-menu-vertical-demo"
           @open="handleOpen"
           @close="handleClose"
       >
+        <div class="example-number">例子个数:{{getExampleNumber()}}</div>
         <el-sub-menu v-for="(first,index) in examples" :key="index" :index="first.id">
           <template #title>
             <img :src="getIcon(first.icon)" width="24" height="24" style="margin-right: 5px">
@@ -85,8 +93,8 @@ const getSketch = (img:string) => {
           </el-menu-item>
         </el-sub-menu>
       </el-menu>
-    </div>
 
+    </div>
     <div class="viewer" style="{height:100%}">
       <div class="big" v-for="(first,index) in examples" :key="index">
         <div class="first" :id="first.id">
@@ -117,6 +125,17 @@ const getSketch = (img:string) => {
 </template>
 
 <style scoped>
+
+.example-number{
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 18px;
+}
+
 .el-menu--horizontal > .el-menu-item:nth-child(1) {
   margin-right: auto;
   pointer-events: none;

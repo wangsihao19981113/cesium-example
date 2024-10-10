@@ -10,15 +10,18 @@
   },
   "dependencies": {
     "cesium": "^1.99.0",
+    "earcut": "^3.0.0",
     "element-plus": "^2.8.0",
     "gcoord": "^1.0.6",
     "lodash-es": "^4.17.21",
+    "netcdfjs": "^3.0.0",
     "pinia": "^2.1.7",
     "vite-plugin-cesium": "^1.2.23",
     "vue": "^3.3.4",
     "vue-router": "^4.4.3"
   },
   "devDependencies": {
+    "@types/earcut": "^2.1.4",
     "@vicons/antd": "^0.12.0",
     "@vicons/carbon": "^0.12.0",
     "@vicons/fa": "^0.12.0",

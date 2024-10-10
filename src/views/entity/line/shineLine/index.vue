@@ -4,7 +4,7 @@ import {onMounted} from "vue";
 import {useMapStore} from "@/store/modules/mapStore/mapStore";
 import * as Cesium from "cesium";
 import {LineShineMaterialProperty} from "@/lib/LineMaterial"
-import data from "./data.json"
+import data from "../data/data.json"
 
 
 onMounted(() => {

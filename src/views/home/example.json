@@ -109,10 +109,28 @@
           "icon": "line",
           "items": [
             {
+              "name": "基础线",
+              "id": "baseline",
+              "icon": "baseline",
+              "path": "/example/entity/baseline"
+            },
+            {
+              "name": "虚线",
+              "id": "dashedline",
+              "icon": "dashedline",
+              "path": "/example/entity/dashedline"
+            },
+            {
               "name": "上升线",
               "id": "risingline",
               "icon": "risingline",
               "path": "/example/entity/risingline"
+            },
+            {
+              "name": "抛物线",
+              "id": "parabolaline",
+              "icon": "parabolaline",
+              "path": "/example/entity/parabolaline"
             },
             {
               "name": "闪烁线",
@@ -132,6 +150,19 @@
               "id": "water",
               "icon": "water",
               "path": "/example/entity/water"
+            }
+          ]
+        },
+        {
+          "name": "粒子",
+          "id": "Particle",
+          "icon": "particle",
+          "items": [
+            {
+              "name": "流",
+              "id": "flow",
+              "icon": "flow",
+              "path": "/example/entity/flow"
             }
           ]
         }
@@ -192,6 +223,12 @@
           "icon": "sceneanalysis",
           "items": [
             {
+              "name": "测量",
+              "id": "measure",
+              "icon": "measure",
+              "path": "/example/analysis/measure"
+            },
+            {
               "name": "水淹分析",
               "id": "flooding",
               "icon": "flooding",
@@ -202,6 +239,12 @@
               "id": "viewshed",
               "icon": "viewshed",
               "path": "/example/analysis/viewshed"
+            },
+            {
+              "name": "剖面分析",
+              "id": "section",
+              "icon": "section",
+              "path": "/example/analysis/section"
             }
           ]
         }
